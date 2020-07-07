@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orinoco - De superbes ours en peluche faits main">
+    <link href="static/css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e86bda96b6.js" crossorigin="anonymous"></script>
+    <title>Le produit de votre choix - Orinoco</title>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="static/images/logo_Orinoco.png" alt="logo de l'entreprise Orinoco">
+        <a href="index.html">
+            <p class="titreOrinoco">ORINOCO</p>
+        </a>
+        <div><a href="panier.html"><i id="logo_panier" class="fas fa-cart-arrow-down"></i></a></div>
+    </header>
+    <h1>Personnalisez votre produit !</h1>
+    <article id="bloc__produit">
+        <p id="image__bloc"></p>
+        <div id="bloc__produit--info">
+            <p id="titre__bloc"></p>
+            <FORM>
+                <p id="titleProduct"><strong>Choisissez la couleur de votre choix :</strong></p>
+                <SELECT id="color__bloc--option">       
+                </SELECT>
+            </FORM>
+
+            <div id="description"><strong>Description :</strong>
+                <p id="description__bloc"></p>
+            </div>
+            <div id="prix__bloc"></div>
+            <input required type="submit" value='Ajouter au panier !' id='addpanier'></input>
+        </div>
+    </article>
+</body>
+<script src="static/js/products.js"></script>
+
+</html>

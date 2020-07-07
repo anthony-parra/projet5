@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orinoco - Voici le résumé de votre panier !">
+    <link href="static/css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e86bda96b6.js" crossorigin="anonymous"></script>
+    <title>Panier - Orinoco</title>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="static/images/logo_Orinoco.png" alt="logo de l'entreprise Orinoco">
+        <a href="index.html">
+            <p class="titreOrinoco">ORINOCO</p>
+        </a>
+        <div><a href="panier.html"><i id="logo_panier" class="fas fa-cart-arrow-down"></i></a></div>
+    </header>
+
+    <h1>Résumé des produits de votre panier</h1>
+
+    <table id="panier">
+        <thead>
+            <tr id="panier__commande">
+                <td id="name">Désignation</td>
+                <td id="price">Prix</td>
+                <td id="color">Couleur</td>
+                <td id="quantity">Quantité</td>
+                <td id="totalPrice">Prix Total</td>
+                <td id="deleteProduct">Supprimer la ligne</td>
+            </tr>
+        </thead>
+        <tbody id="panier__body">
+        </tbody>
+        <tfoot id="prix__total">
+        </tfoot>
+    </table>
+
+    <form id="formulaire" method="post" action="commande.html">
+        <h2 class="titreCommande">Formulaire de commande ! </h2>
+        <div class="nom__prenom">
+            <p>
+                <label for="lastName">Votre nom</label><br>
+                <input type="text" name="lastName" id="lastName" required size="20px" pattern="[A-Za-z àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ \s]{1,}" placeholder="Dupont" title="Format : dupont">
+            </p>
+            <p>
+                <label for="firstName">Votre prénom</label><br>
+                <input type="text" name="firstName" id="firstName" required size="20px" pattern="[A-Za-z àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ \s]{1,}" placeholder="Bernard" title="Format : bernard">
+            </p>
+        </div>
+        <div class="adresse__ville">
+            <p>
+                <label for="address">Votre adresse postale</label><br>
+                <input type="text" name="address" id="address" required size="20px" pattern="[A-Za-z0-9\s]{5,}" placeholder="12 rue de la mouette" title="Format : 12 rue de la mouette">
+            </p>
+            <p>
+                <label for="city">CP et votre ville</label><br>
+                <input type="text" name="city" id="city" required size="20px" pattern="[0-9]{5}[A-Za-z\s]{2,}" placeholder="17000 La Rochelle" title="Format : 17000 La Rochelle">
+            </p>
+        </div>
+        <div class="adresse__mail--bouton">
+            <p>
+                <label for="email">Votre adresse mail</label><br>
+                <input type="email" name="email" id="email" required size="30px" placeholder="____.____@___.com">
+            </p>
+            <p>
+                <input id="bouton__validation" type="Submit" value="Envoyer">
+            </p>
+
+        </div>
+    </form>
+    <script src="static/js/panier.js"></script>
+</body>
+
+</html>
