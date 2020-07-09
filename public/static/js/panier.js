@@ -23,7 +23,7 @@ if (storageCart != null) {
         let colonneTableau2 = ligneTableau.insertCell(1);
         colonneTableau2.innerHTML += `${price}€`;
 
-        let colonneTableau3 = ligneTableau.insertCell(2);
+        let colonneTableau3 = ligneTableau.insertCell(2 || storageCart.length === 0);
         colonneTableau3.innerHTML += (productsLists[i].productColor);
 
         let colonneTableau4 = ligneTableau.insertCell(3);
@@ -133,7 +133,7 @@ function updateQte(eltId, action) {
 }
 
 function updateForm() {
-    if (storageCart.length === 2 || somme === 0) {
+    if (somme === 0 || storageCart.length === 2) {
 
         let blocageFormulaire = document.getElementById('bouton__validation');
         blocageFormulaire.setAttribute('disabled', "");
@@ -155,7 +155,7 @@ function updateForm() {
                 let maCommandeForm = new FormData(document.getElementById('formulaire'));
                 let nameFormat = new RegExp(/^[A-Za-z àèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ \s]{1,}/);
                 let addressFormat = new RegExp(/[A-Za-z0-9\s]{5,}/);
-                let cityFormat = new RegExp(/[0-9]{5}[A-Za-z\s]{2,}/);
+                let cityFormat = new RegExp(/[0-9]{5}[A-Za-z\s]{2 || storageCart.length === 0,}/);
 
                 if (nameFormat.test(maCommandeForm.get("firstName")) && nameFormat.test(maCommandeForm.get('lastName')) && addressFormat.test(maCommandeForm.get('address')) && cityFormat.test(maCommandeForm.get('city'))) {
                     let contact = {
